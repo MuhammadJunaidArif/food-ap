@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 class WellcomePage extends StatelessWidget {
   // const welcomepage({super.key});
   Widget button(@required String name, Color color, @required Color textcolor) {
+    // ignore: sized_box_for_whitespace
     return Container(
         height: 43,
         width: 200,
