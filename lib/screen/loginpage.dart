@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/screen/widget/My_text_field.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  
+  TextEditingController Email = TextEditingController();
+  TextEditingController Password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    Widget textfield(@required String hintText, IconData icon) {
-      return TextField(
-        decoration: InputDecoration(
-            prefixIcon: Icon(
-              icon,
-              color: Colors.grey,
-            ),
-            hintText: hintText,
-            hintStyle: TextStyle(color: Colors.grey),
-            enabledBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey))),
-      );
-    }
+    // // Widget textfield(@required String hintText, IconData icon) {
+    // //   return TextField(
+    // //     decoration: InputDecoration(
+    // //         prefixIcon: Icon(
+    // //           icon,
+    // //           color: Colors.grey,
+    // //         ),
+    // //         hintText: hintText,
+    // //         hintStyle: TextStyle(color: Colors.grey),
+    // //         enabledBorder: UnderlineInputBorder(
+    // //             borderSide: BorderSide(color: Colors.grey))),
+    // //   );
+    // }
 
     return Scaffold(
       backgroundColor: Colors.black,
@@ -40,9 +43,11 @@ class LoginPage extends StatelessWidget {
             ),
             Column(
               children: [
-                textfield("UserName", Icons.person_outline),
+                MyTextField(
+                    controller: Email, hintText: "Email", obscureText: false),
                 SizedBox(height: 20),
-                textfield("Password", Icons.lock_outline),
+                MyTextField(
+                    controller: Password, hintText: "Password", obscureText: true)
               ],
             ),
             ElevatedButton(
@@ -60,6 +65,7 @@ class LoginPage extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
+              // ignore: prefer_const_literals_to_create_immutables
               children: [
                 Text(
                   "New User ?",

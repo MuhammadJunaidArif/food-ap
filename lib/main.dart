@@ -1,5 +1,8 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:food_app/screen/loginpage.dart';
+import 'package:food_app/screen/sign_up.dart';
 import 'package:food_app/screen/wellcome_page.dart';
 
 void main() {
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "flutter demo",
       theme: ThemeData(),
-      home: LoginPage(),
+      home: SignUp(),
     );
   }
 }
